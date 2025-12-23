@@ -1,0 +1,45 @@
+import java.util.*;
+public class NestedException {
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        try{
+            try{
+                System.out.println("Enter the numerator:");
+                int num=sc.nextInt();
+                System.out.println("Enter the Denominator:");
+                int den=sc.nextInt();
+                int data=num/den;
+                System.out.println("Result:"+data);
+            }
+            catch(ArithmeticException e)
+            {
+                System.out.println(e);
+                System.out.println(e.getMessage());
+            }
+            try{
+                int[] arr=new int[5];
+                arr[10]=20;
+                System.out.println(arr[10]);
+            }
+            catch(ArrayIndexOutOfBoundsException a)
+            {
+                System.out.println(a);
+                System.out.println(a.getMessage());
+            }
+            System.out.println("Enter  the integer value:");
+            int val=sc.nextInt();
+            System.out.println("Value"+val);
+        }
+        catch(InputMismatchException i)
+        {
+            System.out.println(i);
+            System.out.println(i.getMessage());
+        }
+        finally{
+            System.out.println("Finally Executed...");
+        }
+    }
+}
+        
+
